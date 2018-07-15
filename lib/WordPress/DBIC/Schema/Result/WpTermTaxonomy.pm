@@ -138,6 +138,9 @@ __PACKAGE__->add_unique_constraint("term_id_taxonomy", ["term_id", "taxonomy"]);
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2018-07-15 12:07:23
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Fl/eXgnqldaqu9Ak6ZoEFA
 
+__PACKAGE__->has_many(wp_term_relationships => 'WordPress::DBIC::Schema::Result::WpPost::WpTermRelationship',
+                      'term_taxonomy_id');
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
+__PACKAGE__->belongs_to(wp_term => 'WordPress::DBIC::Schema::Result::WpTerm', 'term_id');
+
 1;

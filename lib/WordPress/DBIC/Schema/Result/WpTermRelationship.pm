@@ -94,6 +94,11 @@ __PACKAGE__->set_primary_key("object_id", "term_taxonomy_id");
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2018-07-15 12:07:23
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:q7eDuejLxkqqkDkfFMlaWA
 
+__PACKAGE__->belongs_to(wp_post => 'WordPress::DBIC::Schema::Result::WpPost::WpPost',
+                        { 'foreign.id' => 'self.object_id' });
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
+__PACKAGE__->belongs_to(wp_term_taxonomy => 'WordPress::DBIC::Schema::Result::WpTermTaxonomy',
+                        'term_taxonomy_id');
+
+
 1;

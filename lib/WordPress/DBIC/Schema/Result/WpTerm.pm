@@ -96,6 +96,6 @@ __PACKAGE__->set_primary_key("term_id");
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2018-07-15 12:07:23
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:meW85vK2T7qLX6M+czocGQ
 
+__PACKAGE__->has_many(wp_term_taxonomies => 'WordPress::DBIC::Schema::Result::WpTermTaxonomy', 'term_id');
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
 1;

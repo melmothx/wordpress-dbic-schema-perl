@@ -304,6 +304,9 @@ __PACKAGE__->set_primary_key("id");
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2018-07-15 12:07:23
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:nMn+6ADXb+wDaW22xfgTWA
 
+__PACKAGE__->has_many(wp_term_relationships => 'WordPress::DBIC::Schema::Result::WpTermRelationship',
+                      { 'foreign.object_id' => 'self.id'});
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
+__PACKAGE__->many_to_many(taxonomies => wp_term_relationships => 'wp_term_taxonomy');
+
 1;
