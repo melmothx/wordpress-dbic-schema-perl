@@ -19,6 +19,8 @@ WriteMakefile(
     },
     PREREQ_PM => {
         #'ABC'              => '1.6',
+	DBIx::Class => 0,
+	DBIx::Class::Tree => 0,
         #'Foo::Bar::Module' => '5.0401',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
