@@ -304,9 +304,45 @@ __PACKAGE__->set_primary_key("id");
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2018-07-15 12:07:23
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:nMn+6ADXb+wDaW22xfgTWA
 
+__PACKAGE__->load_components(qw/Tree::AdjacencyList/);
+
+__PACKAGE__->parent_column('post_parent');
+
 __PACKAGE__->has_many(wp_term_relationships => 'WordPress::DBIC::Schema::Result::WpTermRelationship',
                       { 'foreign.object_id' => 'self.id'});
 
 __PACKAGE__->many_to_many(taxonomies => wp_term_relationships => 'wp_term_taxonomy');
+
+__PACKAGE__->has_many(metas => 'WordPress::DBIC::Schema::Result::WpPostmeta',
+                      { 'foreign.post_id' => 'self.id' });
+
+use URI;
+
+sub clean_url {
+    my $self = shift;
+    return '/' . join('/', reverse map { $_->post_name } ($self, $self->ancestors));    
+}
+
+sub permalink {
+    my $self = shift;
+    return URI->new($self->guid)->path_query;
+}
+
+sub html_teaser {
+    my $self = shift;
+    if ($self->html_body =~ m{(.*?)<!--\s*more\s*-->}si) {
+        return $1;
+    }
+    else {
+        return '';
+    }
+}
+
+sub html_body {
+    my $self = shift;
+    my $body = $self->post_content;
+    $body =~ s/(\r?\n)+/<p \/>\n/g;
+    return $body;
+}
 
 1;
