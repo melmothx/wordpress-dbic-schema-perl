@@ -1,5 +1,6 @@
 Revision history for WordPress-DBIC-Schema
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+1.00    2018-7-26
+
+ * First version, with basic relationships
 

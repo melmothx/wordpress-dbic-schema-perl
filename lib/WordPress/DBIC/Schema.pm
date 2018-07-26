@@ -54,7 +54,7 @@ with foreign keys.
 =cut
 
 
-our $VERSION = 1;
+our $VERSION = '1.00';
 
 __PACKAGE__->load_components(qw/Helper::Schema::QuoteNames
                                 Schema::Config
