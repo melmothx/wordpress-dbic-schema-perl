@@ -318,6 +318,32 @@ __PACKAGE__->has_many(metas => 'WordPress::DBIC::Schema::Result::WpPostmeta',
 
 use URI;
 
+=head1 RELATIONSHIPS
+
+=head2 wp_term_relationships: has many
+
+=head2 taxonomies: many to many using wp_term_relationships as bridge
+
+=head2 metas: has many to the wp_postmeta table
+
+=head1 METHODS
+
+They should be self-explanatory
+
+=over 4
+
+=item * clean_url
+
+=item * permalink
+
+=item * html_teaser
+
+=item * html_body
+
+=back
+
+=cut
+
 sub clean_url {
     my $self = shift;
     return '/' . join('/', reverse map { $_->post_name } ($self, $self->ancestors));    

@@ -18,11 +18,11 @@ WriteMakefile(
         'Test::More' => '0',
     },
     PREREQ_PM => {
-        #'ABC'              => '1.6',
-	DBIx::Class => 0,
-	DBIx::Class::Tree => 0,
-        #'Foo::Bar::Module' => '5.0401',
-    },
+                  'DBIx::Class' => 0,
+                  'DBIx::Class::Tree' => 0,
+                  'DBIx::Class::Helpers' => 0,
+                  'DBIx::Class::Schema::Config' => 0,
+                 },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WordPress-DBIC-Schema-*' },
 );

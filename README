@@ -1,16 +1,11 @@
 WordPress-DBIC-Schema
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+This is a basic schema (and mostly a work in progress) for the
+WordPress database, which can be used for migrations, data fetching
+etc.
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
-
+It comes with some relationships even if the DB doesn't implement them
+with foreign keys.
 
 INSTALLATION
 
@@ -32,16 +27,6 @@ You can also look for information at:
 
     RT, CPAN's request tracker (report bugs here)
         https://rt.cpan.org/NoAuth/Bugs.html?Dist=WordPress-DBIC-Schema
-
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/WordPress-DBIC-Schema
-
-    CPAN Ratings
-        https://cpanratings.perl.org/d/WordPress-DBIC-Schema
-
-    Search CPAN
-        https://metacpan.org/release/WordPress-DBIC-Schema
-
 
 LICENSE AND COPYRIGHT
 
