@@ -22,6 +22,7 @@ WriteMakefile(
                   'DBIx::Class::Tree' => 0,
                   'DBIx::Class::Helpers' => 0,
                   'DBIx::Class::Schema::Config' => 0,
+                  'URI' => 0,
                  },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WordPress-DBIC-Schema-*' },
