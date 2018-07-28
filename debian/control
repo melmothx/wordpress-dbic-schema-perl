@@ -1,0 +1,30 @@
+Source: libwordpress-dbic-schema-perl
+Section: perl
+Priority: optional
+Maintainer: Marco Pessotto <melmothx@gmail.com>
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: libdbix-class-helpers-perl,
+ libdbix-class-perl,
+ libdbix-class-schema-config-perl,
+ libdbix-class-tree-perl,
+ liburi-perl,
+ perl
+Standards-Version: 3.9.8
+Homepage: https://metacpan.org/release/WordPress-DBIC-Schema
+
+Package: libwordpress-dbic-schema-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends},
+ libdbix-class-helpers-perl,
+ libdbix-class-perl,
+ libdbix-class-schema-config-perl,
+ libdbix-class-tree-perl,
+ liburi-perl
+Description: Database schema for WordPress
+ This is a basic schema (and mostly a work in progress) for the WordPress
+ database, which can be used for migrations, data fetching etc.
+ .
+ It comes with some relationships even if the DB doesn't implement them with
+ foreign keys.
+ .
+ This description was automagically extracted from the module by dh-make-perl.
